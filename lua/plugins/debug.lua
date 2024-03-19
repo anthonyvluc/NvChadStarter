@@ -40,7 +40,10 @@ local plugins = {
   },
   {
     "mrcjkb/rustaceanvim",
-    dependencies = "mfussenegger/nvim-dap",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "rcarriga/nvim-dap-ui",
+    },
     version = '^4',
     ft = "rust",
   },

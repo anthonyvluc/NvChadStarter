@@ -67,9 +67,20 @@ map(
 --
 map(
     "n",
-    "<leader>dpr",
+    "<leader>dpt",
     function()
         require('dap-python').test_method()
     end,
     { desc = "Debug python test" }
+)
+--
+-- Rust Debugging
+--
+map(
+    "n",
+    "<leader>dr",
+    function()
+        vim.cmd.RustLsp("debuggables")
+    end,
+    { desc = "Debug rust" }
 )
