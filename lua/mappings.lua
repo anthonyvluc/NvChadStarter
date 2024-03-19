@@ -42,16 +42,6 @@ map(
     "<cmd> DapStepIn <CR>",
     { desc = "Step in" }
 )
-map(
-    "n",
-    "<leader>dus",
-    function()
-        local widgets = require('dap.ui.widgets');
-        local sidebar = widgets.sidebar(widgets.scopes);
-        sidebar.open();
-    end,
-    { desc = "Open debugging sidebar" }
-)
 
 --
 -- Go Debugging
@@ -71,4 +61,15 @@ map(
         require('dap-go').debug_last()
     end,
     { desc = "Debug last go test" }
+)
+--
+-- Python Debugging
+--
+map(
+    "n",
+    "<leader>dpr",
+    function()
+        require('dap-python').test_method()
+    end,
+    { desc = "Debug python test" }
 )
