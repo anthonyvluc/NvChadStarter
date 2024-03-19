@@ -1,4 +1,5 @@
 local plugins = {
+  -- Highlighting
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -31,6 +32,7 @@ local plugins = {
       },
     },
   },
+  -- Language server
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -38,6 +40,7 @@ local plugins = {
       require "configs.lspconfig"
     end,
   },
+  -- Use Mason as a language server package manager
   --:Mason to see more installation options
   --nvim +MasonInstallAll
   {
@@ -45,12 +48,20 @@ local plugins = {
     opts = {
       ensure_installed = {
         "lua-language-server",
-         "html-lsp",
-         "prettier",
-         "rust-analyzer",
-         "stylua"
+        "html-lsp",
+        "prettier",
+        "rust-analyzer",
+        "stylua"
       },
     },
+  },
+  -- Autoformat on save
+  {
+    "rust-lang/rust.vim",
+    ft = "rust",
+    init = function ()
+      vim.g.rustfmt_autosave = 1
+    end
   }
 }
 

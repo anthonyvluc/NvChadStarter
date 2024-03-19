@@ -47,7 +47,7 @@ vim.cmd("let g:indent_guides_start_level = 2")
 -- History and Backup
 vim.cmd("set history=1000")        -- How many lines of history to remember
 vim.cmd("set swapfile")
-vim.cmd("set directory^=~/.vim/swap//") -- Protect changes between writes
+vim.cmd("set directory^=~/.nvim/swap//") -- Protect changes between writes
 vim.cmd("set writebackup")         -- Protect against crask-during-write
 vim.cmd("set nobackup")            -- But do not persist backup after successful write
 vim.cmd("set backupcopy=auto")     -- Use rename-and-write-new method whenever safe
@@ -55,11 +55,12 @@ vim.cmd("set backupcopy=auto")     -- Use rename-and-write-new method whenever s
 
 vim.cmd("set undolevels=1000")     -- Number of undo levels
 vim.cmd("set undofile")            -- Maintain edit history between sessions
-vim.cmd("set undodir^=~/.vim/undo//") -- Specify directory for undo files
+vim.cmd("set undodir^=~/.nvim/undo//") -- Specify directory for undo files
 
 --
 vim.cmd("set backspace=indent,eol,start")  -- Backspace behaviour
 
+vim.cmd("syntax enable")
 vim.cmd("filetype plugin on")
 
 -- File-Based Settings
@@ -68,5 +69,6 @@ vim.cmd("autocmd FileType c,cpp setlocal ts=8 sw=8 sts=8 noet")
 vim.cmd("autocmd FileType go setlocal ts=8 sw=8 sts=8 noet")
 vim.cmd("autocmd FileType rs setlocal ts=4 sw=4 sts=4 et")
 vim.cmd("autocmd FileType rb setlocal ts=2 sw=2 sts=2 et")
+vim.cmd("autocmd FileType lua setlocal ts=2 sw=2 sts=2 et")
 vim.cmd("autocmd FileType yaml setlocal ts=2 sw=2 sts=2 et")
 vim.cmd("autocmd FileType markdown setlocal spell")
