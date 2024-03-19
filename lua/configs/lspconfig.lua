@@ -1,11 +1,19 @@
 local configs = require "nvchad.configs.lspconfig"
 
 local servers = {
-  -- html = {},
-  -- cssls = {},
-  -- bashls = {},
   -- astro = {},
+  -- bashls = {},
+  -- cssls = {},
+  -- docker_compose_language_service = {},
+  -- elixirls = {},
+  -- emmet_language_server = {},
+  -- eslint = {},
+  -- html = {},
   -- lua_ls = {},
+  -- mdx_analyzer = {},
+  -- svelte = {},
+  -- tailwindcss = {},
+  -- terraformls = {},
   gopls = {
     filetypes = {
       "go",
@@ -23,22 +31,6 @@ local servers = {
       },
     },
   },
-  -- svelte = {},
-  -- docker_compose_language_service = {},
-  -- emmet_language_server = {},
-  -- elixirls = {},
-  -- eslint = {},
-  -- mdx_analyzer = {},
-  -- tailwindcss = {},
-  -- terraformls = {},
-
-  -- Disabled rust_analyzer since rustaceanvim automatically calls
-  -- and handles it.
-  -- rust_analyzer = {
-  --   settings = {
-  --     ["rust-analyzer"] = {},
-  --   },
-  -- },
 
   pyright = {
     settings = {
@@ -50,6 +42,14 @@ local servers = {
       },
     },
   },
+
+  -- Disabled rust_analyzer since rustaceanvim automatically calls
+  -- and handles it.
+  -- rust_analyzer = {
+  --   settings = {
+  --     ["rust-analyzer"] = {},
+  --   },
+  -- },
 }
 
 for name, opts in pairs(servers) do
