@@ -41,28 +41,47 @@ local plugins = {
     end,
   },
   -- Use Mason as a language server package manager
-  --:Mason to see more installation options
-  --nvim +MasonInstallAll
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "lua-language-server",
-        "html-lsp",
-        "prettier",
-        "rust-analyzer",
-        "stylua"
-      },
-    },
-  },
+  -- 1) Add more options here
+  --    :Mason to see more installation options
+  -- 2) Add the language server option to ../configs/lspconfig.lua
+  -- 3) Run the following to install all
+  --    nvim +MasonInstallAll
+  -- {
+  --   "williamboman/mason.nvim",
+  --   opts = {
+  --     ensure_installed = {
+  --       "astro-language-server",
+  --       "bash-language-server",
+  --       "docker-compose-language-service",
+  --       "lua-language-server",
+  --       "emmet-language-server",
+  --       "elixir-ls",
+  --       "eslint-lsp",
+  --       "gopls",
+  --       "html-lsp",
+  --       "mdx-analyzer",
+  --       "prettier",
+  --       "rust-analyzer",
+  --       "pyright",
+  --       "stylua",
+  --       "svelte-language-server",
+  --       "tailwindcss-language-server",
+  --       "terraform-ls",
+  --     },
+  --   },
+  -- },
   -- Autoformat on save
   {
     "rust-lang/rust.vim",
     ft = "rust",
     init = function ()
       vim.g.rustfmt_autosave = 1
-    end
-  }
+    end,
+  },
+  {
+    "fatih/vim-go",
+    ft = "go",
+  },
 }
 
 return plugins

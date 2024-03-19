@@ -1,17 +1,43 @@
-local configs = require("nvchad.configs.lspconfig")
+local configs = require "nvchad.configs.lspconfig"
 
-local on_attach = configs.on_attach
-local on_init = configs.on_init
-local capabilities = configs.capabilities
+local servers = {
+  -- html = {},
+  -- cssls = {},
+  -- bashls = {},
+  -- astro = {},
+  -- lua_ls = {},
+  gopls = {},
+  -- svelte = {},
+  -- docker_compose_language_service = {},
+  -- emmet_language_server = {},
+  -- elixirls = {},
+  -- eslint = {},
+  -- mdx_analyzer = {},
+  -- tailwindcss = {},
+  -- terraformls = {},
 
-local lspconfig = require "lspconfig"
---See list here: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-local servers = { "html", "cssls", "lua_ls", "rust_analyzer"}
+  rust_analyzer = {
+    settings = {
+      ["rust-analyzer"] = {},
+    },
+  },
 
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_init = on_init,
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }
+  -- pyright = {
+  --   settings = {
+  --     python = {
+  --       analysis = {
+  --         autoSearchPaths = true,
+  --         typeCheckingMode = "basic",
+  --       },
+  --     },
+  --   },
+  -- },
+}
+
+for name, opts in pairs(servers) do
+  opts.on_init = configs.on_init
+  opts.on_attach = configs.on_attach
+  opts.capabilities = configs.capabilities
+
+  require("lspconfig")[name].setup(opts)
 end
