@@ -83,10 +83,6 @@ local plugins = {
     end,
   },
   {
-    "fatih/vim-go",
-    ft = "go",
-  },
-  {
     "tell-k/vim-autopep8",
     ft = "python",
     init = function ()

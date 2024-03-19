@@ -6,7 +6,23 @@ local servers = {
   -- bashls = {},
   -- astro = {},
   -- lua_ls = {},
-  gopls = {},
+  gopls = {
+    filetypes = {
+      "go",
+      "gomod",
+      "gowork",
+      "gotmpl",
+    },
+    settings = {
+      gopls = {
+        completeUnimported = true,
+        usePlaceholders = true,
+        analyses = {
+          unusedparams = true,
+        },
+      },
+    },
+  },
   -- svelte = {},
   -- docker_compose_language_service = {},
   -- emmet_language_server = {},
@@ -16,11 +32,13 @@ local servers = {
   -- tailwindcss = {},
   -- terraformls = {},
 
-  rust_analyzer = {
-    settings = {
-      ["rust-analyzer"] = {},
-    },
-  },
+  -- Disabled rust_analyzer since rustaceanvim automatically calls
+  -- and handles it.
+  -- rust_analyzer = {
+  --   settings = {
+  --     ["rust-analyzer"] = {},
+  --   },
+  -- },
 
   pyright = {
     settings = {
