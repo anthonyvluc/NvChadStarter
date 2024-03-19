@@ -22,16 +22,16 @@ local servers = {
     },
   },
 
-  -- pyright = {
-  --   settings = {
-  --     python = {
-  --       analysis = {
-  --         autoSearchPaths = true,
-  --         typeCheckingMode = "basic",
-  --       },
-  --     },
-  --   },
-  -- },
+  pyright = {
+    settings = {
+      python = {
+        analysis = {
+          autoSearchPaths = true,
+          typeCheckingMode = "basic",
+        },
+      },
+    },
+  },
 }
 
 for name, opts in pairs(servers) do

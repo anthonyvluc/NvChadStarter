@@ -32,7 +32,9 @@ local plugins = {
       },
     },
   },
+  --
   -- Language server
+  --
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -70,7 +72,9 @@ local plugins = {
   --     },
   --   },
   -- },
+  --
   -- Autoformat on save
+  --
   {
     "rust-lang/rust.vim",
     ft = "rust",
@@ -81,6 +85,14 @@ local plugins = {
   {
     "fatih/vim-go",
     ft = "go",
+  },
+  {
+    "tell-k/vim-autopep8",
+    ft = "python",
+    init = function ()
+      vim.g.autopep8_disable_show_diff = 1
+      vim.g.autopep8_on_save = 1
+    end,
   },
 }
 
