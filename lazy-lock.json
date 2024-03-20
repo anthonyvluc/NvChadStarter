@@ -33,5 +33,6 @@
   "telescope.nvim": { "branch": "master", "commit": "3b8399c27380d09c44f55c8fbeff0bd7a4ed3f8d" },
   "ui": { "branch": "v2.5", "commit": "9a98ddbed8db34b6a47e6806ac0a68803d693eaf" },
   "vim-autopep8": { "branch": "master", "commit": "4191261db378fcad4213fc59a7f3be0c2735d543" },
+  "vim-go": { "branch": "master", "commit": "5332cd8f60340bf09f46ba1765b8661cd16041e4" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
 }
