@@ -5,8 +5,15 @@ local plugins = {
     {
         "mfussenegger/nvim-dap",
         lazy = false,
+        dependencies = {
+            "suketa/nvim-dap-ruby",
+        },
         config = function()
             local dap = require("dap")
+            --
+            -- Ruby
+            --
+            require("dap-ruby").setup()
             --
             -- C++
             --

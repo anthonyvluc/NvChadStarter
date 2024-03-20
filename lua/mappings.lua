@@ -25,6 +25,12 @@ end, { desc = "Clear breakpoints" })
 map("n", "<leader>dsn", "<cmd> DapStepOver <CR>", { desc = "Step over" })
 map("n", "<leader>dso", "<cmd> DapStepOut <CR>", { desc = "Step out" })
 map("n", "<leader>dsi", "<cmd> DapStepIn <CR>", { desc = "Step in" })
+map("n", "<leader>dui", function()
+    require("dapui").open()
+end, { desc = "Open debug UI" })
+map("n", "<leader>duo", function()
+    require("dapui").close()
+end, { desc = "Open debug UI" })
 
 --
 -- Go Debugging

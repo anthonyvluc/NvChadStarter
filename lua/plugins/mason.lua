@@ -21,6 +21,7 @@ local plugins = {
                 -- "html-lsp",
                 -- "mdx-analyzer",
                 -- "prettier",
+                "ruby-lsp",
                 -- "rust-analyzer",
                 -- "pyright",
                 -- "stylua",

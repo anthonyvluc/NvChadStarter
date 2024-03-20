@@ -1,6 +1,9 @@
 local configs = require("nvchad.configs.lspconfig")
 
 local servers = {
+    --
+    -- See list here: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+    --
     -- astro = {},
     -- bashls = {},
     -- cssls = {},
@@ -11,6 +14,7 @@ local servers = {
     -- html = {},
     lua_ls = {},
     -- mdx_analyzer = {},
+    ruby_ls = {},
     -- svelte = {},
     -- tailwindcss = {},
     -- terraformls = {},
