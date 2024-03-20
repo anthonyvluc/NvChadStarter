@@ -50,6 +50,6 @@ end, { desc = "Debug rust" })
 --
 -- C++ Debugging
 --
-map("n", "<leader>dc", function()
-    vim.cmd.RustLsp("debuggables")
-end, { desc = "Debug cpp" })
+-- map("n", "<leader>dc", function()
+--     vim.cmd.RustLsp("debuggables")
+-- end, { desc = "Debug cpp" })
