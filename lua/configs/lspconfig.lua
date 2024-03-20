@@ -36,6 +36,7 @@ local servers = {
         settings = {
             python = {
                 analysis = {
+                    -- https://microsoft.github.io/pyright/#/configuration?id=main-configuration-options
                     autoSearchPaths = true,
                     typeCheckingMode = "basic",
                 },
