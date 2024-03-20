@@ -47,3 +47,9 @@ end, { desc = "Debug python test" })
 map("n", "<leader>dr", function()
     vim.cmd.RustLsp("debuggables")
 end, { desc = "Debug rust" })
+--
+-- C++ Debugging
+--
+-- map("n", "<leader>dc", function()
+--     vim.cmd.RustLsp("debuggables")
+-- end, { desc = "Debug cpp" })
