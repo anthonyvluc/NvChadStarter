@@ -19,9 +19,10 @@ map("i", "jk", "<ESC>", { desc = "Escape insert mode" })
 -- Debugging
 --
 map("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>", { desc = "Add breakpoint at line" })
-map("n", "<leader>dc", function()
+map("n", "<leader>dB", function()
     require("dap").clear_breakpoints()
 end, { desc = "Clear breakpoints" })
+map("n", "<leader>dc", "<cmd> DapContinue <CR>", { desc = "Continue" })
 map("n", "<leader>dsn", "<cmd> DapStepOver <CR>", { desc = "Step over" })
 map("n", "<leader>dso", "<cmd> DapStepOut <CR>", { desc = "Step out" })
 map("n", "<leader>dsi", "<cmd> DapStepIn <CR>", { desc = "Step in" })

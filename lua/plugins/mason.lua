@@ -13,9 +13,9 @@ local plugins = {
                 -- "astro-language-server",
                 -- "bash-language-server",
                 -- "docker-compose-language-service",
-                -- "lua-language-server",
+                -- "lua-language-server", -- Manually installed
                 -- "emmet-language-server",
-                -- "elixir-ls",
+                "elixir-ls",
                 -- "eslint-lsp",
                 -- "gopls",
                 -- "html-lsp",
@@ -24,7 +24,7 @@ local plugins = {
                 "ruby-lsp",
                 -- "rust-analyzer",
                 -- "pyright",
-                -- "stylua",
+                -- "stylua", -- Manually installed
                 -- "svelte-language-server",
                 -- "tailwindcss-language-server",
                 -- "terraform-ls",

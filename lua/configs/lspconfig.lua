@@ -11,7 +11,9 @@ local servers = {
         filetypes = { "c", "cpp", "objc", "objcpp", "h", "hpp" },
     },
     -- docker_compose_language_service = {},
-    -- elixirls = {},
+    elixirls = {
+        cmd = { "/Users/anthonyluc/.local/share/nvim/mason/bin/elixir-ls" },
+    },
     -- emmet_language_server = {},
     -- eslint = {},
     -- html = {},

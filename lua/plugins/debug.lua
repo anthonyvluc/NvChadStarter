@@ -59,8 +59,7 @@ local plugins = {
                 type = "server",
                 port = "${port}",
                 executable = {
-                    -- Must be absolute path
-                    command = "/Users/anthonyluc/.local/share/nvim/mason/bin/codelldb",
+                    command = vim.env.HOME .. "/.local/share/nvim/mason/bin/codelldb",
                     args = { "--port", "${port}" },
                 },
             }
@@ -77,6 +76,29 @@ local plugins = {
                 },
             }
             dap.configurations.c = dap.configurations.cpp
+            --
+            -- Elixir
+            --
+            dap.adapters.mix_task = {
+                type = "executable",
+                command = vim.env.HOME .. "/.local/share/nvim/mason/bin/elixir-ls-debugger",
+                args = {},
+            }
+            dap.configurations.elixir = {
+                {
+                    type = "mix_task",
+                    name = "mix test",
+                    task = "test",
+                    taskArgs = { "--trace" },
+                    request = "launch",
+                    startApps = true, -- for Phoenix projects
+                    projectDir = "${workspaceFolder}",
+                    requireFiles = {
+                        "test/**/test_helper.exs",
+                        "test/**/*_test.exs",
+                    },
+                },
+            }
         end,
     },
     {
