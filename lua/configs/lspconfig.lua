@@ -52,14 +52,6 @@ local servers = {
             },
         },
     },
-
-    -- Disabled rust_analyzer since rustaceanvim automatically calls
-    -- and handles it.
-    -- rust_analyzer = {
-    --   settings = {
-    --     ["rust-analyzer"] = {},
-    --   },
-    -- },
 }
 
 for name, opts in pairs(servers) do

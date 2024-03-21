@@ -134,6 +134,9 @@ local plugins = {
         end,
     },
     {
+        -- Note for future me
+        -- Dont use DapContinue
+        -- Just use <leader>dr
         "mrcjkb/rustaceanvim",
         dependencies = {
             "mfussenegger/nvim-dap",
