@@ -21,8 +21,9 @@ local plugins = {
                 type = "server",
                 port = "${port}",
                 executable = {
-                    command = "~/.local/share/nvim/mason/bin/codelldb",
-                    args = { "  port", "${port}" },
+                    -- Must be absolute path
+                    command = "/Users/anthonyluc/.local/share/nvim/mason/bin/codelldb",
+                    args = { "--port", "${port}" },
                 },
             }
             dap.configurations.cpp = {

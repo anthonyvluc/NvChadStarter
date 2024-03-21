@@ -7,6 +7,9 @@ local servers = {
     -- astro = {},
     -- bashls = {},
     -- cssls = {},
+    clangd = {
+        filetypes = { "c", "cpp", "objc", "objcpp", "h", "hpp" },
+    },
     -- docker_compose_language_service = {},
     -- elixirls = {},
     -- emmet_language_server = {},

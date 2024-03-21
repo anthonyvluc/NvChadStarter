@@ -79,6 +79,19 @@ local plugins = {
             })
         end,
     },
+    {
+        -- TODO: Not working
+        "rhysd/vim-clang-format",
+        ft = { "c", "cpp" },
+        on_attach = function(_, bufnr)
+            local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                callback = function()
+                    vim.lsp.buf.format({ bufnr = bufnr })
+                end,
+            })
+        end,
+    },
 }
 
 return plugins
