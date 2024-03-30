@@ -19,7 +19,7 @@ vim.cmd("set listchars=tab:>·,trail:·") -- Show tabs and trailing whitespace
 vim.cmd("set cmdheight=1") -- Command window height
 vim.cmd("set scrolloff=5") -- Keep 5 lines for (top/bottom) scope
 vim.cmd("set laststatus=2") -- Always show the status line
-vim.cmd("set colorcolumn=80") -- Color column for max width
+vim.cmd("set colorcolumn=100") -- Color column for max width
 
 -- Visuals
 vim.cmd("set showmatch") -- Show matching brackets
@@ -62,11 +62,13 @@ vim.cmd("set backspace=indent,eol,start") -- Backspace behaviour
 
 -- File-Based Settings
 --autocmd FileType python setlocal shiftwidth=4 softtabstop=4 expandtab
+vim.cmd("autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform")
 vim.cmd("autocmd FileType c,cpp setlocal ts=8 sw=8 sts=8 noet")
 vim.cmd("autocmd FileType go setlocal ts=8 sw=8 sts=8 noet")
 vim.cmd("autocmd FileType py setlocal ts=4 sw=4 sts=4 et")
 vim.cmd("autocmd FileType rs setlocal ts=4 sw=4 sts=4 et")
 vim.cmd("autocmd FileType rb setlocal ts=4 sw=4 sts=4 et")
+vim.cmd("autocmd FileType terraform setlocal ts=2 sw=2 sts=2 et")
 vim.cmd("autocmd FileType lua setlocal ts=4 sw=4 sts=4 et")
 vim.cmd("autocmd FileType yaml setlocal ts=4 sw=4 sts=4 et")
 vim.cmd("autocmd FileType markdown setlocal spell")

@@ -4,25 +4,25 @@ local servers = {
     --
     -- See list here: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
     --
-    -- astro = {},
-    -- bashls = {},
-    -- cssls = {},
+    astro = {},
+    bashls = {},
+    cssls = {},
     clangd = {
         filetypes = { "c", "cpp", "objc", "objcpp", "h", "hpp" },
     },
-    -- docker_compose_language_service = {},
+    docker_compose_language_service = {},
     elixirls = {
         cmd = { "/Users/anthonyluc/.local/share/nvim/mason/bin/elixir-ls" },
     },
-    -- emmet_language_server = {},
-    -- eslint = {},
-    -- html = {},
+    emmet_language_server = {},
+    eslint = {},
+    html = {},
     lua_ls = {},
-    -- mdx_analyzer = {},
+    mdx_analyzer = {},
     ruby_ls = {},
-    -- svelte = {},
-    -- tailwindcss = {},
-    -- terraformls = {},
+    svelte = {},
+    tailwindcss = {},
+    terraformls = {},
     gopls = {
         filetypes = {
             "go",
@@ -61,3 +61,11 @@ for name, opts in pairs(servers) do
 
     require("lspconfig")[name].setup(opts)
 end
+
+-- Language specific
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    pattern = { "*.tf", "*.tfvars" },
+    callback = function()
+        vim.lsp.buf.format()
+    end,
+})
