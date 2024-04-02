@@ -4,6 +4,7 @@ local servers = {
     --
     -- See list here: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
     --
+    ansiblels = {},
     astro = {},
     bashls = {},
     cssls = {},
@@ -16,6 +17,7 @@ local servers = {
     },
     emmet_language_server = {},
     eslint = {},
+    graphql = {},
     html = {},
     lua_ls = {},
     mdx_analyzer = {},
@@ -23,6 +25,13 @@ local servers = {
     svelte = {},
     tailwindcss = {},
     terraformls = {},
+    tsserver = {
+        init_options = {
+            preferences = {
+                disableSuggestions = true,
+            },
+        },
+    },
     gopls = {
         filetypes = {
             "go",

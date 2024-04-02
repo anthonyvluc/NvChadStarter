@@ -82,6 +82,11 @@ local plugins = {
         end,
     },
     {
+        "prettier/vim-prettier",
+        ft = { "typescript", "javascript", "html", "css", "scss" },
+        vim.api.nvim_command([[autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx,*.html,*.css,*.scss :Prettier]]),
+    },
+    {
         -- TODO: Not working
         "rhysd/vim-clang-format",
         ft = { "c", "cpp" },

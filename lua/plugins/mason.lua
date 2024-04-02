@@ -9,18 +9,20 @@ local plugins = {
         "williamboman/mason.nvim",
         opts = {
             ensure_installed = {
-                "codelldb",
+                "ansible-language-server",
                 "astro-language-server",
                 "bash-language-server",
+                "codelldb",
                 "docker-compose-language-service",
                 -- "lua-language-server", -- Manually installed
                 "emmet-language-server",
                 "elixir-ls",
-                -- "eslint-lsp",
+                "eslint-lsp",
                 -- "gopls", -- Manually installed
+                "graphql-language-service-cli",
                 "html-lsp",
                 "mdx-analyzer",
-                -- "prettier",
+                "prettier",
                 "ruby-lsp",
                 -- "rust-analyzer",
                 -- "pyright",
@@ -28,6 +30,7 @@ local plugins = {
                 "svelte-language-server",
                 "tailwindcss-language-server",
                 "terraform-ls",
+                "typescript-language-server",
             },
         },
     },

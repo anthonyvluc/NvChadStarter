@@ -36,5 +36,6 @@
   "vim-autopep8": { "branch": "master", "commit": "4191261db378fcad4213fc59a7f3be0c2735d543" },
   "vim-clang-format": { "branch": "master", "commit": "6b791825ff478061ad1c57b21bb1ed5a5fd0eb29" },
   "vim-go": { "branch": "master", "commit": "5332cd8f60340bf09f46ba1765b8661cd16041e4" },
+  "vim-prettier": { "branch": "master", "commit": "7dbdbb12c50a9f4ba72390cce2846248e4368fd0" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
 }
