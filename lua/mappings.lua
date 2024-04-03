@@ -60,3 +60,17 @@ end, { desc = "Debug rust" })
 -- map("n", "<leader>dc", function()
 --     vim.cmd.RustLsp("debuggables")
 -- end, { desc = "Debug cpp" })
+--
+-- Javascript Debugging
+--
+map("n", "<leader>dj", function()
+    if vim.fn.filereadable(".vscode/launch.json") then
+        local dap_vscode = require("dap.ext.vscode")
+        dap_vscode.load_launchjs(nil, {
+            ["pwa-node"] = js_based_languages,
+            ["chrome"] = js_based_languages,
+            ["pwa-chrome"] = js_based_languages,
+        })
+    end
+    require("dap").continue()
+end, { desc = "Debug JS with args" })

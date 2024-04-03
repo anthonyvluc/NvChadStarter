@@ -1,3 +1,9 @@
+local js_based_languages = {
+    "typescript",
+    "javascript",
+    "vue",
+}
+
 local plugins = {
     --
     -- Debugging
@@ -61,6 +67,83 @@ local plugins = {
                     },
                 },
             }
+            --
+            -- Typescript/Javascript
+            --
+            -- dap.adapters["pwa-node"] = {
+            --     type = "server",
+            --     host = "localhost",
+            --     port = "${port}",
+            --     executable = {
+            --         command = "node",
+            --         args = { vim.env.HOME .. "/.local/share/nvim/mason/bin/js-debug-adapter", "${port}" },
+            --     },
+            -- }
+            for _, language in ipairs(js_based_languages) do
+                dap.configurations[language] = {
+                    {
+                        type = "pwa-node",
+                        request = "launch",
+                        name = "Debug single nodejs files",
+                        program = "${file}",
+                        cwd = "${workspaceFolder}",
+                        sourceMaps = true,
+                    },
+                    {
+                        type = "pwa-node",
+                        request = "attach",
+                        name = "Attach to nodejs process (npm run dev --inspect)",
+                        processId = require("dap.utils").pick_process,
+                        cwd = "${workspaceFolder}",
+                        sourceMaps = true,
+                    },
+                    {
+                        type = "pwa-chrome",
+                        request = "launch",
+                        name = "Launch & Debug Chrome",
+                        url = function()
+                            local co = coroutine.running()
+                            return coroutine.create(function()
+                                vim.ui.input({
+                                    prompt = "Enter URL: ",
+                                    default = "http://localhost:3000",
+                                }, function(url)
+                                    if url == nil or url == "" then
+                                        return
+                                    else
+                                        coroutine.resume(co, url)
+                                    end
+                                end)
+                            end)
+                        end,
+                        webRoot = vim.fn.getcwd(),
+                        protocol = "inspector",
+                        sourceMaps = true,
+                        userDataDir = false,
+                    },
+                    {
+                        type = "pwa-node",
+                        request = "launch",
+                        name = "Debug Jest Tests",
+                        runtimeExecutable = "node",
+                        runtimeArgs = {
+                            -- "--inspect-brk",
+                            "./node_modules/jest/bin/jest.js",
+                            "--runInBand",
+                        },
+                        rootPath = "${workspaceFolder}",
+                        cwd = "${workspaceFolder}",
+                        console = "integratedTerminal",
+                        internalConsoleOptions = "neverOpen",
+                    },
+                    -- Divider for the launch.json derived configs
+                    {
+                        name = "----- ↓ launch.json configs ↓ -----",
+                        type = "",
+                        request = "launch",
+                    },
+                }
+            end
         end,
     },
     {
@@ -118,6 +201,35 @@ local plugins = {
             require("dap-go").setup(opts)
         end,
     },
+    {
+        "microsoft/vscode-js-debug",
+        build = "npm install --legacy-peer-deps --no-save && npx gulp vsDebugServerBundle && rm -rf out && mv dist out",
+    },
+    {
+        "mxsdev/nvim-dap-vscode-js",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+            "rcarriga/nvim-dap-ui",
+        },
+        ft = js_based_languages,
+        config = function()
+            require("dap-vscode-js").setup({
+                debugger_path = vim.fn.resolve(vim.fn.stdpath("data") .. "/lazy/vscode-js-debug"),
+                adapters = {
+                    "chrome",
+                    "pwa-node",
+                    "pwa-chrome",
+                    "pwa-msedge",
+                    "pwa-extensionHost",
+                    "node-terminal",
+                },
+            })
+        end,
+    },
+    -- {
+    --     "Joakker/lua-json5",
+    --     build = "./install.sh",
+    -- },
 }
 
 return plugins

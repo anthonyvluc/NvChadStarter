@@ -13,7 +13,7 @@ local servers = {
     },
     docker_compose_language_service = {},
     elixirls = {
-        cmd = { "/Users/anthonyluc/.local/share/nvim/mason/bin/elixir-ls" },
+        cmd = { vim.fn.resolve(vim.fn.stdpath("data") .. "/mason/bin/elixir-ls") },
     },
     emmet_language_server = {},
     eslint = {},

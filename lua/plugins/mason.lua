@@ -21,6 +21,7 @@ local plugins = {
                 -- "gopls", -- Manually installed
                 "graphql-language-service-cli",
                 "html-lsp",
+                "js-debug-adapter",
                 "mdx-analyzer",
                 "prettier",
                 "ruby-lsp",
