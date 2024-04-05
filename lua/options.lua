@@ -72,3 +72,24 @@ vim.cmd("autocmd FileType terraform setlocal ts=2 sw=2 sts=2 et")
 vim.cmd("autocmd FileType lua setlocal ts=4 sw=4 sts=4 et")
 vim.cmd("autocmd FileType yaml setlocal ts=4 sw=4 sts=4 et")
 vim.cmd("autocmd FileType markdown setlocal spell")
+vim.filetype.add({
+    -- Detect and assign filetype based on the extension of the filename
+    extension = {
+        log = "log",
+        conf = "conf",
+        env = "dotenv",
+    },
+    -- Detect and apply filetypes based on the entire filename
+    filename = {
+        [".env"] = "dotenv",
+        ["env"] = "dotenv",
+    },
+    -- Detect and apply filetypes based on certain patterns of the filenames
+    pattern = {
+        -- INFO: Match filenames like - ".env.example", ".env.local" and so on
+        ["%.env%.[%w_.-]+"] = "dotenv",
+    },
+})
+vim.cmd("autocmd FileType log set noswapfile noundofile")
+vim.cmd("autocmd FileType dotenv set noswapfile noundofile")
+vim.cmd("autocmd FileType conf set noswapfile noundofile")
