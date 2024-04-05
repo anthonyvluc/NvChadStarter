@@ -14,6 +14,12 @@ map("i", "jk", "<ESC>", { desc = "Escape insert mode" })
 -- Personal mappings
 --  See options via
 --  :h vim.keymap.set()
+map("n", "<leader>tt", function()
+    vim.lsp.buf.hover()
+end, { desc = "Show type on hover" })
+map("n", "<leader>E", function()
+    vim.diagnostic.open_float()
+end, { desc = "Show error message in floating window" })
 
 --
 -- Debugging
