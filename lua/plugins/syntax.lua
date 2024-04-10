@@ -84,7 +84,10 @@ local plugins = {
     {
         "prettier/vim-prettier",
         ft = { "typescript", "javascript", "html", "css", "scss" },
-        vim.api.nvim_command([[autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx,*.html,*.css,*.scss :Prettier]]),
+        init = function()
+            vim.api.nvim_command([[autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx,*.html,*.css,*.scss :Prettier]])
+            vim.g["prettier#config#print_width"] = 100
+        end,
     },
     {
         -- TODO: Not working

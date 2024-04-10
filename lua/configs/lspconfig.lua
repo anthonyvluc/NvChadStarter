@@ -21,6 +21,7 @@ local servers = {
     html = {},
     lua_ls = {},
     mdx_analyzer = {},
+    relay_lsp = {},
     ruby_ls = {},
     svelte = {},
     tailwindcss = {},
