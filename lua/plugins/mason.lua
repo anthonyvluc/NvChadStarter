@@ -12,6 +12,7 @@ local plugins = {
                 "ansible-language-server",
                 "astro-language-server",
                 "bash-language-server",
+                "black",
                 "codelldb",
                 "docker-compose-language-service",
                 -- "lua-language-server", -- Manually installed

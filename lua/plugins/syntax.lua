@@ -61,12 +61,17 @@ local plugins = {
         end,
     },
     {
-        "tell-k/vim-autopep8",
+        -- NOTE: Using black plugin here but cmd down there uses mason installed black
+        -- This is due to the plugin not working with nvim
+        "psf/black",
         ft = "python",
         init = function()
-            vim.g.autopep8_max_line_length = 79
-            vim.g.autopep8_disable_show_diff = 1
-            vim.g.autopep8_on_save = 1
+            vim.api.nvim_create_autocmd("BufWritePost", {
+                pattern = { "*.py" },
+                callback = function()
+                    vim.cmd("!black %")
+                end,
+            })
         end,
     },
     {
