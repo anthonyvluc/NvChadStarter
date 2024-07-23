@@ -102,6 +102,11 @@ local plugins = {
             })
         end,
     },
+    -- Cassandra CQL
+    {
+        "elubow/cql-vim",
+        ft = { "cql" },
+    },
 }
 
 return plugins
