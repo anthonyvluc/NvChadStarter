@@ -112,6 +112,19 @@ local plugins = {
         "elubow/cql-vim",
         ft = { "cql" },
     },
+    -- GitHub Copilog
+    {
+        "github/copilot.vim",
+    },
+    -- Others
+    {
+        "towolf/vim-helm",
+        ft = { "helm", "yaml" },
+    },
+    {
+        "mustache/vim-mustache-handlebars",
+        ft = { "mustache" },
+    },
 }
 
 return plugins
