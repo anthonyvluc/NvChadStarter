@@ -125,6 +125,10 @@ local plugins = {
         "mustache/vim-mustache-handlebars",
         ft = { "mustache" },
     },
+    {
+        "b0o/schemastore.nvim",
+        ft = { "json", "yaml" },
+    },
 }
 
 return plugins

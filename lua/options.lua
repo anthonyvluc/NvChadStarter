@@ -19,7 +19,7 @@ vim.cmd("set listchars=tab:>·,trail:·") -- Show tabs and trailing whitespace
 vim.cmd("set cmdheight=1") -- Command window height
 vim.cmd("set scrolloff=5") -- Keep 5 lines for (top/bottom) scope
 vim.cmd("set laststatus=2") -- Always show the status line
-vim.cmd("set colorcolumn=100") -- Color column for max width
+vim.cmd("set colorcolumn=120") -- Color column for max width
 
 -- Visuals
 vim.cmd("set showmatch") -- Show matching brackets
