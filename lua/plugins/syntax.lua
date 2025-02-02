@@ -113,9 +113,9 @@ local plugins = {
         ft = { "cql" },
     },
     -- GitHub Copilog
-    {
-        "github/copilot.vim",
-    },
+    -- {
+    --     "github/copilot.vim",
+    -- },
     -- Others
     {
         "towolf/vim-helm",
