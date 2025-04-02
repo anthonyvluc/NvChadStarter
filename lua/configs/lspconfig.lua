@@ -33,7 +33,14 @@ local servers = {
     ruby_ls = {},
     svelte = {},
     tailwindcss = {},
-    terraformls = {},
+    terraformls = {
+        -- If needed for issues with fmt on save
+        -- init_options = {
+        --     terraform = {
+        --         path = "/opt/homebrew/bin/terraform"
+        --     }
+        -- }
+    },
     tsserver = {
         init_options = {
             preferences = {

@@ -129,6 +129,18 @@ local plugins = {
         "b0o/schemastore.nvim",
         ft = { "json", "yaml" },
     },
+    {
+        "NoahTheDuke/vim-just",
+        ft = { "just" },
+    },
+    {
+        "rodjek/vim-puppet",
+        ft = { "puppet" },
+    },
+    {
+        "hashivim/vim-terraform",
+        ft = { "hcl", "terraform" },
+    },
 }
 
 return plugins

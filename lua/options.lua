@@ -68,7 +68,7 @@ vim.cmd("autocmd FileType go setlocal ts=8 sw=8 sts=8 noet")
 vim.cmd("autocmd FileType py setlocal ts=4 sw=4 sts=4 et")
 vim.cmd("autocmd FileType rs setlocal ts=4 sw=4 sts=4 et")
 vim.cmd("autocmd FileType rb setlocal ts=4 sw=4 sts=4 et")
-vim.cmd("autocmd FileType terraform setlocal ts=2 sw=2 sts=2 et")
+vim.cmd("autocmd FileType terraform setlocal ts=2 sw=2 sts=2 et commentstring=#%s")
 vim.cmd("autocmd FileType lua setlocal ts=4 sw=4 sts=4 et")
 vim.cmd("autocmd FileType yaml setlocal ts=4 sw=4 sts=4 et")
 vim.cmd("autocmd FileType markdown setlocal spell")
@@ -83,13 +83,17 @@ vim.filetype.add({
     filename = {
         [".env"] = "dotenv",
         ["env"] = "dotenv",
+        ["secret.tfvars"] = "secret",
     },
     -- Detect and apply filetypes based on certain patterns of the filenames
     pattern = {
         -- INFO: Match filenames like - ".env.example", ".env.local" and so on
         ["%.env%.[%w_.-]+"] = "dotenv",
+        -- INFO: Match filenames like - ".envrc.example", ".envrc.local" and so on
+        ["%.envrc%.[%w_.-]+"] = "dotenv",
     },
 })
 vim.cmd("autocmd FileType log set noswapfile noundofile")
 vim.cmd("autocmd FileType dotenv set noswapfile noundofile")
 vim.cmd("autocmd FileType conf set noswapfile noundofile")
+vim.cmd("autocmd FileType secret set noswapfile noundofile")
