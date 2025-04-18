@@ -141,6 +141,10 @@ local plugins = {
         "hashivim/vim-terraform",
         ft = { "hcl", "terraform" },
     },
+    {
+        "ekalinin/Dockerfile.vim",
+        ft = { "Dockerfile" },
+    },
 }
 
 return plugins

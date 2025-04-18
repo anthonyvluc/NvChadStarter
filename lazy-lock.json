@@ -1,5 +1,6 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
+  "Dockerfile.vim": { "branch": "master", "commit": "2a31e6bcea5977209c05c728c4253d82fd873c82" },
   "LuaSnip": { "branch": "master", "commit": "825a61bad1d60d917a7962d73cf3c683f4e0407e" },
   "NvChad": { "branch": "v2.5", "commit": "6833c60694a626615911e379d201dd723511546d" },
   "base46": { "branch": "v2.5", "commit": "adb64a6ae70f8c61c5ab8892f07d29dafd4d47ad" },
