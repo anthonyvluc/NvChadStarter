@@ -7,6 +7,7 @@ local servers = {
     ansiblels = {},
     astro = {},
     bashls = {},
+    biome = {},
     cssls = {},
     clangd = {
         filetypes = { "c", "cpp", "objc", "objcpp", "h", "hpp" },
@@ -102,6 +103,12 @@ for name, opts in pairs(servers) do
 end
 
 -- Language specific
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    pattern = { "*.ts", "*.tsx" },
+    callback = function()
+        vim.lsp.buf.format()
+    end,
+})
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     pattern = { "*.tf", "*.tfvars" },
     callback = function()

@@ -6,7 +6,7 @@ vim.cmd("set nowrap") -- Do not wrap line
 vim.cmd("set tw=120") -- Text width
 vim.cmd("set linebreak") -- Break lines at word (requires Wrap lines)
 vim.cmd("set whichwrap+=<,>,h,l,[,]") -- Wrap lines
-vim.cmd("set pastetoggle=<F2>")
+-- vim.cmd("set pastetoggle=<F2>")
 
 -- UI
 vim.cmd("set relativenumber") -- Show line numbers

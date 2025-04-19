@@ -86,14 +86,14 @@ local plugins = {
             })
         end,
     },
-    {
-        "prettier/vim-prettier",
-        ft = { "typescript", "javascript", "html", "css", "scss" },
-        init = function()
-            vim.api.nvim_command([[autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx,*.html,*.css,*.scss :Prettier]])
-            vim.g["prettier#config#print_width"] = 100
-        end,
-    },
+    -- {
+    --     "prettier/vim-prettier",
+    --     ft = { "typescript", "javascript", "html", "css", "scss" },
+    --     init = function()
+    --         vim.api.nvim_command([[autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx,*.html,*.css,*.scss :Prettier]])
+    --         vim.g["prettier#config#print_width"] = 100
+    --     end,
+    -- },
     {
         -- TODO: Not working
         "rhysd/vim-clang-format",
